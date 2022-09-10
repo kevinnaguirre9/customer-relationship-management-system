@@ -1,6 +1,6 @@
 # Customer Relationship Management System
 
-Role-based Django web application with Postgres DBMS
+Role-based Django web application with Postgres DBMS. based on https://github.com/divanov11/crash-course-CRM project
 
 ## First steps
 
