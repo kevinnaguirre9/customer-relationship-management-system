@@ -78,14 +78,24 @@ WSGI_APPLICATION = 'crm.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'demo_1',
+#         'USER': 'sticky',
+#         'PASSWORD': '',
+#         'HOST': 'database-1.csex963drobp.us-east-2.rds.amazonaws.com',
+#         'PORT':'5432'
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'demo_1',
-        'USER': 'sticky',
-        'PASSWORD': 'Dv456159753_',
-        'HOST': 'database-1.csex963drobp.us-east-2.rds.amazonaws.com',
-        'PORT':'5432'
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USERNAME'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 }
 
@@ -140,9 +150,9 @@ MEDIA_ROOT =os.path.join(BASE_DIR, 'static/images')
 
 
 #SMTP Confirguration
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
+EMAIL_HOST = os.environ.get('MAIL_HOST')
+EMAIL_PORT = os.environ.get('MAIL_PORT')
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'diegojeanpierre98@gmail.com'
-EMAIL_HOST_PASSWORD = 'TheSticky1998'
+EMAIL_HOST_USER =  os.environ.get('MAIL_USERNAME')
+EMAIL_HOST_PASSWORD =  os.environ.get('MAIL_PASSWORD')
 ACCOUNT_EMAIL_VERIFICATION = 'none'
