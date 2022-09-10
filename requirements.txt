@@ -4,3 +4,4 @@ django-widget-tweaks
 django-filter
 django-storages
 Pillow
+radon
